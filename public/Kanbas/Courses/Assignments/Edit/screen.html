@@ -1,0 +1,199 @@
+<!--combine Kanbas Navigation, Course Navigation and Assignment-->
+
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <!------------- First Column -------->
+          <td style="vertical-align: top">
+            <ul>
+              <li>
+                <a href="/Kanbas/Account/Navigation/index.html">Account</a>
+              </li>
+              <li>
+                <a href="#">Dashboard</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
+              </li>
+              <li>
+                <a href="#">Calendar</a>
+              </li>
+              <li>
+                <a href="#">Inbox</a>
+              </li>
+              <li>
+                <a href="#">History</a>
+              </li>
+              <li>
+                <a href="#">Studio</a>
+              </li>
+              <li>
+                <a href="#">Commons</a>
+              </li>
+              <li>
+                <a href="#">Help</a>
+              </li>
+            </ul>
+          </td>
+          <!------------- Second Column -------->
+          <td style="vertical-align: top">
+            <ul>
+              <li>
+                <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+              </li>
+              <li>
+                <a href="#">Modules</a>
+              </li>
+              <li>
+                <a href="#">Piazza</a>
+              </li>
+              <li>
+                <a href="#">Zoom Meetings</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Assignments/screen.html"
+                  >Assignments</a
+                >
+              </li>
+              <li>
+                <a href="#">Quizzes</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+              </li>
+              <li>
+                <a href="#">People</a>
+              </li>
+              <li>
+                <a href="#">Panopto Video</a>
+              </li>
+              <li>
+                <a href="#">Discussions</a>
+              </li>
+              <li>
+                <a href="#">Announcements</a>
+              </li>
+              <li>
+                <a href="#">Pages</a>
+              </li>
+              <li>
+                <a href="#">Files</a>
+              </li>
+              <li>
+                <a href="#">Rubrics</a>
+              </li>
+              <li>
+                <a href="#">Outcomes</a>
+              </li>
+              <li>
+                <a href="#">Collaborations</a>
+              </li>
+              <li>
+                <a href="#">Syllabus</a>
+              </li>
+              <li>
+                <a href="#">Settings</a>
+              </li>
+            </ul>
+          </td>
+          <!------------- Third Column -------->
+          <td>
+            <form action="/Kanbas/Assignments/screen.html">
+              <select>
+                <option>Edit</option>
+                <option selected value="speed_grader">Speed Grader</option>
+                <option>Duplicate</option>
+                <option>Delete</option>
+                <option>Move To...</option>
+                <option>Send To...</option>
+                <option>Copy To...</option>
+                <option>Share to Commons</option>
+              </select>
+              <hr />
+              <h2>Assignment Name</h2>
+              <input
+                type="text"
+                placeholder="Assignment Name"
+                value="A1 -ENV - HTML"
+              />
+              <br />
+              <br />
+              <textarea>This is the assignment description.</textarea>
+              <br />
+              <br />
+              <label for="points">Points</label>
+              <input id="points" type="text" placeholder="Points" value="100" />
+              <br />
+              <br />
+
+              <label>Assignment Group</label> <br />
+              <select>
+                <option>ASSIGNMENTS</option>
+              </select>
+              <br />
+              <br />
+              <label>Display Grade as</label> <br />
+
+              <select>
+                <option>Percentage</option>
+              </select>
+              <br />
+              <br />
+
+              <label>Submission Type</label> <br />
+
+              <select>
+                <option>Online</option>
+                <br />
+              </select>
+              <br />
+              <br />
+              <!-- Checkbox for Text Entry -->
+
+              <label>Online Entry Options</label> <br />
+              <label><input type="checkbox" />Text Entry</label><br />
+              <label><input type="checkbox" />Website URL</label><br />
+              <label><input type="checkbox" />Media Recording</label><br />
+              <label><input type="checkbox" />Student Annotation</label><br />
+              <label><input type="checkbox" />File Uploads</label><br />
+
+              <br />
+
+              <!-- --------- -->
+
+              <label>Assign</label><br />
+              <label>Assign to</label><br />
+              <input
+                type="text"
+                id="assign-to"
+                placeholder="assign to"
+                value="Everyone"
+              /><br /><br />
+              <label>Due</label><br />
+              <input type="date" id="text-fields-dob" value="2021-01-01" />
+              <br /><br />
+              <label>Available</label><br />
+              <input
+                type="date"
+                id="text-fields-dob"
+                value="2021-01-01"
+              /><br /><br />
+              <label>Until</label><br />
+              <input
+                type="date"
+                id="text-fields-dob"
+                value="2021-01-01"
+              /><br /><br />
+              <button>Cancel</button>
+              <button>Save</button>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

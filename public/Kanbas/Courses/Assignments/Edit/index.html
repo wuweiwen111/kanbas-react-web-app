@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+
+  <body>
+    <select>
+      <option>Edit</option>
+      <option selected value="speed_grader">Speed Grader</option>
+      <option>Duplicate</option>
+      <option>Delete</option>
+      <option>Move To...</option>
+      <option>Send To...</option>
+      <option>Copy To...</option>
+      <option>Share to Commons</option>
+    </select>
+    <hr />
+    <h2>Assignment Name</h2>
+    <input type="text" placeholder="Assignment Name" value="A1 -ENV - HTML" />
+    <br />
+    <br />
+    <textarea>This is the assignment description.</textarea>
+    <br />
+    <br />
+    <label for="points">Points</label>
+    <input id="points" type="text" placeholder="Points" value="100" />
+    <br />
+    <br />
+
+    <label>Assignment Group</label> <br />
+    <select>
+      <option>ASSIGNMENTS</option>
+    </select>
+    <br />
+    <br />
+    <label>Display Grade as</label> <br />
+
+    <select>
+      <option>Percentage</option>
+    </select>
+    <br />
+    <br />
+
+    <label>Submission Type</label> <br />
+
+    <select>
+      <option>Online</option>
+      <br />
+    </select>
+    <br />
+    <br />
+    <!-- Checkbox for Text Entry -->
+
+    <label>Online Entry Options</label> <br />
+    <label><input type="checkbox" />Text Entry</label><br />
+    <label><input type="checkbox" />Website URL</label><br />
+    <label><input type="checkbox" />Media Recording</label><br />
+    <label><input type="checkbox" />Student Annotation</label><br />
+    <label><input type="checkbox" />File Uploads</label><br />
+
+    <br />
+
+    <!-- --------- -->
+
+    <label>Assign</label><br />
+    <label>Assign to</label><br />
+    <input
+      type="text"
+      id="assign-to"
+      placeholder="assign to"
+      value="Everyone"
+    /><br /><br />
+    <label>Due</label><br />
+    <input type="date" id="text-fields-dob" value="2021-01-01" /> <br /><br />
+    <label>Available</label><br />
+    <input type="date" id="text-fields-dob" value="2021-01-01" /><br /><br />
+    <label>Until</label><br />
+    <input type="date" id="text-fields-dob" value="2021-01-01" /><br /><br />
+    <a href="/Kanbas/Assignment/screen.html">
+      <button>Cancel</button>
+    </a>
+    <a href="/Kanbas/Assignment/screen.html">
+      <button>Save</button>
+    </a>
+  </body>
+</html>
+
+<!--
+  "window.location.href='/Kanbas/Assignment/screen.html'"
+onclick="window.location.href='/Kanbas/Account/Profile/edit-profile.html'"
+-->
