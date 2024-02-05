@@ -161,20 +161,35 @@
                       background-color: lightgray;
                       border-color: white;
                       color: black;
+                      width: 100px;
+                      height: 40px;
                     "
                   >
                     <i class="fas fa-file-import"></i> Import
                   </button>
-                  <button
-                    class="btn btn-primary"
-                    style="
-                      background-color: lightgray;
-                      border-color: white;
-                      color: black;
-                    "
-                  >
-                    <i class="fas fa-file-export"></i> Export
-                  </button>
+                  <div style="display: flex; align-items: center">
+                    <i
+                      class="fas fa-file-import"
+                      style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      "
+                    ></i>
+                    <select
+                      class="btn btn-primary"
+                      style="
+                        background-color: lightgray;
+                        color: black;
+                        border-color: white;
+                        width: 100px;
+                        height: 40px;
+                      "
+                    >
+                      <option>Export</option>
+                    </select>
+                  </div>
+
                   <button
                     class="btn"
                     style="border-color: white; background-color: lightgray"
@@ -257,18 +272,18 @@
                             text-align: center;
                             width: 50px;
                           "
-                        />
+                        />%
                       </td>
-                      <td>89</td>
-                      <td>87</td>
-                      <td>90</td>
+                      <td>89%</td>
+                      <td>87%</td>
+                      <td>90%</td>
                     </tr>
                     <!-- Additional rows as needed -->
                     <tr>
                       <td style="background-color: lightgray">Amy</td>
-                      <td style="background-color: lightgray">98</td>
-                      <td style="background-color: lightgray">89</td>
-                      <td style="background-color: lightgray">87</td>
+                      <td style="background-color: lightgray">98%</td>
+                      <td style="background-color: lightgray">89%</td>
+                      <td style="background-color: lightgray">87%</td>
                       <td style="background-color: lightgray">
                         <input
                           type="number"
@@ -279,13 +294,13 @@
                             text-align: center;
                             width: 50px;
                           "
-                        />
+                        />%
                       </td>
                     </tr>
                     <tr>
                       <td>Bob</td>
-                      <td>98</td>
-                      <td>89</td>
+                      <td>98%</td>
+                      <td>89%</td>
                       <td>
                         <input
                           type="number"
@@ -296,16 +311,16 @@
                             text-align: center;
                             width: 50px;
                           "
-                        />
+                        />%
                       </td>
-                      <td>87</td>
+                      <td>87%</td>
                     </tr>
                     <tr>
                       <td style="background-color: lightgray">Tina</td>
-                      <td style="background-color: lightgray">98</td>
-                      <td style="background-color: lightgray">89</td>
-                      <td style="background-color: lightgray">87</td>
-                      <td style="background-color: lightgray">87</td>
+                      <td style="background-color: lightgray">98%</td>
+                      <td style="background-color: lightgray">89%</td>
+                      <td style="background-color: lightgray">87%</td>
+                      <td style="background-color: lightgray">87%</td>
                     </tr>
                   </tbody>
                 </table>
