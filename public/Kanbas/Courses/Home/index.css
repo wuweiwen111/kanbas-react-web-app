@@ -1,0 +1,64 @@
+/* for 4th columns */
+/* course status */
+.course-status-item a {
+  display: inline-block; /* Allows setting padding and background */
+  background-color: lightgray; /* Grey background */
+  padding: 5px; /* Adjust padding as needed */
+  color: black; /* Text color, change if necessary */
+  text-decoration: none; /* Removes underline */
+  border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+.course-status-item {
+  padding-left: 0;
+  list-style-type: none;
+}
+.course-status-item li {
+  margin-bottom: 10px; /* Adds space between list items */
+}
+
+/* todo */
+.todo-container {
+  border-bottom: 1px solid black; /* Adds bottom border */
+}
+
+.todo{
+  color: red;
+  text-decoration: none;
+}
+
+.todo-top {
+  list-style-type: none;
+
+}
+
+.todo-detail{
+  display: block;
+  color: gray;
+}
+
+/* course status */
+.btn-published {
+  background-color: green;
+  color: white;
+}
+
+
+.calendar-link {
+  text-decoration: none;
+  color: red;
+}
+.coming-up-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black; /* Adds bottom border */
+}
+.coming-up-group a {
+  text-decoration: none;
+  color: red;
+}
+
+.coming-up-group {
+  list-style-type: none;
+}

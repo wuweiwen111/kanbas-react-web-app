@@ -1,218 +1,141 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <title>Assignment Detail</title>
+    <link rel="stylesheet" href="/public/libs/bootstrap/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="/public/libs/font-awesome/css/font-awesome.css"
+    />
+
+    <!-- from previous css -->
+    <link rel="stylesheet" href="/public/Kanbas/Courses/Modules/index.css" />
+    <!-- own css -->
+    <link
+      rel="stylesheet"
+      href="/public/Kanbas/Courses/Assignments/index.css"
+    />
   </head>
   <body>
-    <table width="100%">
-      <tbody>
-        <tr>
-          <td>
-            <input placeholder="Search for Assignments" />
-          </td>
-          <td>
-            <button>+ Group</button>
-            <button>+ Assignment</button>
-            <select>
-              <option selected value="edit_dates">Edit Assignment Dates</option>
-              <option>Edit Assignment Dates</option>
-              <option>Assignment Group Weights</option>
-              <option>Gradescope 1.3</option>
-            </select>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <!------------------------------ top ------------------------>
+    <!-- Buttons on top -->
+    <div class="button-container d-flex align-items-center p-2">
+      <input
+        placeholder="Search for Assignment"
+        class="search form-control w-25"
+      />
+      <!-- Self-closing tag -->
+      <div class="ms-auto">
+        <button class="btn btn-group"><i class="fa fa-plus"></i> Group</button>
+        <button class="btn btn-module">
+          <i class="fa fa-plus"></i> Assignment
+        </button>
+        <button class="btn btn-edit"><i class="fa fa-ellipsis-v"></i></button>
+      </div>
+    </div>
 
-    <hr />
-
-    <h2>
-      ASSIGNMENT 40% of Total
-      <select>
-        <option selected value="edit">Edit</option>
-        <option>Speed Grader</option>
-        <option>Duplicate</option>
-        <option>Delete</option>
-        <option>Move To...</option>
-        <option>Send To...</option>
-        <option>Copy To...</option>
-        <option>Share to Commons</option>
-      </select>
-    </h2>
-    <ul>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html"
-          >A1 - ENV + HTML
-        </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html"
-          >A2 - CSS + BOOTSTRAP
-        </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html"
-          >A3 - JS + REACT
-        </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html"
-          >A4 - STATE + REDUX
-        </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html"
-          >A5 - NODE + SESSION
-        </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html"
-          >A6 - MONGO + MONGOOSE
-        </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-    </ul>
-    <h2>
-      QUZZIES 10% of Total
-      <select>
-        <option selected value="edit">Edit</option>
-        <option>Speed Grader</option>
-        <option>Duplicate</option>
-        <option>Delete</option>
-        <option>Move To...</option>
-        <option>Send To...</option>
-        <option>Copy To...</option>
-        <option>Share to Commons</option>
-      </select>
-    </h2>
-    <ul>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html">Q1 - HTML </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html">Q2 - CSS </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html">Q3 - JS, ES6 </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html">Q4 - NODE </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html">Q5 - MONGO </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
+    <!-- Assignment content -->
+    <ul class="list-group wd-modules">
+      <li class="list-group-item m-2">
+        <div>
+          <i class="fa fa-ellipsis-v"></i> Assignments
+          <span class="float-end">
+            <button class="assignment-percent rounded">40% of Total</button>
+            <i class="fa fa-plus ms-2"></i>
+            <i class="fa fa-ellipsis-v ms-2"></i>
+          </span>
+        </div>
+        <ul class="list-group">
+          <!-- start -->
+          <li class="list-group-item">
+            <i class="fa fa-ellipsis-v"></i> A1 SETUP
+            <ul class="nested-list">
+              <li>
+                Week 0: SETUP
+                <span class="float-end">
+                  <i class="fa fa-check-circle text-success"></i>
+                  <i class="fa fa-ellipsis-v ms-2"></i>
+                </span>
+                <p><strong>Due</strong> Jan 14, 2024 at 11:59pm | 100 pts</p>
+              </li>
+            </ul>
+          </li>
+          <!-- end -->
+          <!-- start -->
+          <li class="list-group-item">
+            <i class="fa fa-ellipsis-v"></i> A1 SETUP
+            <ul class="nested-list">
+              <li>
+                Week 0: SETUP
+                <span class="float-end">
+                  <i class="fa fa-check-circle text-success"></i>
+                  <i class="fa fa-ellipsis-v ms-2"></i>
+                </span>
+                <p><strong>Due</strong> Jan 14, 2024 at 11:59pm | 100 pts</p>
+              </li>
+            </ul>
+          </li>
+          <!-- end -->
+          <!-- start -->
+          <li class="list-group-item">
+            <i class="fa fa-ellipsis-v"></i> A1 SETUP
+            <ul class="nested-list">
+              <li>
+                Week 0: SETUP
+                <span class="float-end">
+                  <i class="fa fa-check-circle text-success"></i>
+                  <i class="fa fa-ellipsis-v ms-2"></i>
+                </span>
+                <p><strong>Due</strong> Jan 14, 2024 at 11:59pm | 100 pts</p>
+              </li>
+            </ul>
+          </li>
+          <!-- end -->
+          <!-- start -->
+          <li class="list-group-item">
+            <i class="fa fa-ellipsis-v"></i> A1 SETUP
+            <ul class="nested-list">
+              <li>
+                Week 0: SETUP
+                <span class="float-end">
+                  <i class="fa fa-check-circle text-success"></i>
+                  <i class="fa fa-ellipsis-v ms-2"></i>
+                </span>
+                <p><strong>Due</strong> Jan 14, 2024 at 11:59pm | 100 pts</p>
+              </li>
+            </ul>
+          </li>
+          <!-- end -->
+          <!-- start -->
+          <li class="list-group-item">
+            <i class="fa fa-ellipsis-v"></i> A1 SETUP
+            <ul class="nested-list">
+              <li>
+                Week 0: SETUP
+                <span class="float-end">
+                  <i class="fa fa-check-circle text-success"></i>
+                  <i class="fa fa-ellipsis-v ms-2"></i>
+                </span>
+                <p><strong>Due</strong> Jan 14, 2024 at 11:59pm | 100 pts</p>
+              </li>
+            </ul>
+          </li>
+          <!-- end -->
+          <!-- start -->
+          <li class="list-group-item">
+            <i class="fa fa-ellipsis-v"></i> A1 SETUP
+            <ul class="nested-list">
+              <li>
+                Week 0: SETUP
+                <span class="float-end">
+                  <i class="fa fa-check-circle text-success"></i>
+                  <i class="fa fa-ellipsis-v ms-2"></i>
+                </span>
+                <p><strong>Due</strong> Jan 14, 2024 at 11:59pm | 100 pts</p>
+              </li>
+            </ul>
+          </li>
+          <!-- end -->
+        </ul>
       </li>
     </ul>
-    <h2>
-      EXAM 20% of Total
-      <select>
-        <option selected value="edit">Edit</option>
-        <option>Speed Grader</option>
-        <option>Duplicate</option>
-        <option>Delete</option>
-        <option>Move To...</option>
-        <option>Send To...</option>
-        <option>Copy To...</option>
-        <option>Share to Commons</option>
-      </select>
-    </h2>
-    <ul>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html">Midterm </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html">Final </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-    </ul>
-    <h2>
-      PROJECT 30% of Total
-      <select>
-        <option selected value="edit">Edit</option>
-        <option>Speed Grader</option>
-        <option>Duplicate</option>
-        <option>Delete</option>
-        <option>Move To...</option>
-        <option>Send To...</option>
-        <option>Copy To...</option>
-        <option>Share to Commons</option>
-      </select>
-    </h2>
-    <ul>
-      <li>
-        <a href="/Kanbas/Courses/Assignments//Edit/index.html">Project </a>
-        <br />
-        <a href="/Kanbas/Courses/Assignments/Modules/index.html">
-          Mutiple Modules</a
-        >
-        | Not available
-      </li>
-    </ul>
+    <!-- Assignment content end -->
   </body>
 </html>

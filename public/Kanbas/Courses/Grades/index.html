@@ -1,351 +1,166 @@
-<!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" href="/public/libs/bootstrap/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="/public/libs/font-awesome/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="/public/Kanbas/Courses/Grades/index.css" />
+  </head>
   <body>
-    <table width="100%">
-      <tbody>
-        <tr>
-          <td style="vertical-align: top">
-            <select>
-              <option>Gradebook</option>
-              <option>Change Gradebook View</option>
-              <option>Traditional Gradebook</option>
-              <option>Individual Gradebook</option>
-            </select>
-          </td>
-          <td style="vertical-align: top">
-            <button>Shortcuts</button>
-            <button>Import</button>
-            <select>
-              <option>Export</option>
-              <option>Export Current Gradebook View</option>
-              <option>Export Entire Gradebook</option>
-            </select>
-            <button>Settings</button>
-          </td>
-        </tr>
+    <div class="container mt-5">
+      <!-- 111111111 -->
+      <div class="button-container d-flex align-items-center p-2 mb-3">
+        <!-- top button -->
+        <div class="ms-auto">
+          <button
+            class="btn btn-primary"
+            style="
+              background-color: lightgray;
+              border-color: white;
+              color: black;
+            "
+          >
+            <i class="fa fa-download"></i> Import
+          </button>
+          <button
+            class="btn btn-primary"
+            style="
+              background-color: lightgray;
+              border-color: white;
+              color: black;
+            "
+          >
+            <i class="fa fa-share-square-o"></i> Export
+          </button>
+          <button style="border-color: white; background-color: lightgray">
+            <i class="fa fa-cog"></i>
+          </button>
+        </div>
+      </div>
 
-        <tr>
-          <td>
-            <h2>Student Names</h2>
-            <input placeholder="Search Student" /><br />
-            <select>
-              <option>Tom</option>
-              <option>Petter</option>
+      <!-- 22222222 -->
+      <div class="row mb-3">
+        <!-- second 1 -->
+        <div class="col-md-6">
+          <label class="form-label">Student Names</label>
+          <div>
+            <select class="form-select">
+              <option>Search Students</option>
             </select>
-          </td>
-          <td>
-            <h2>Assignment Names</h2>
-            <input placeholder="Search Assignment" /><br />
-            <select>
-              <option>A1</option>
-              <option>A2</option>
+          </div>
+        </div>
+        <!-- second 2 -->
+        <div class="col-md-6">
+          <label class="form-label">Assignment Names</label>
+          <div>
+            <select class="form-select">
+              <option>Search Assignments</option>
             </select>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </div>
+        </div>
+      </div>
 
-    <br />
-    <button>Apply Filters</button>
-    <br />
-    <br />
-    <!------------- table -------------------->
-    <table border="1" width="100%">
-      <!----------------row: header----------------->
-      <thead>
-        <tr>
-          <th>Student Name</th>
-          <th>A1 SETUP<br /><span>Out of 100</span></th>
-          <th>A2 SETUP<br /><span>Out of 100</span></th>
-          <th>A3 SETUP<br /><span>Out of 100</span></th>
-          <th>A4 SETUP<br /><span>Out of 100</span></th>
-          <th>A5 SETUP<br /><span>Out of 100</span></th>
-          <th>A6 SETUP<br /><span>Out of 100</span></th>
-          <th>A7 SETUP<br /><span>Out of 100</span></th>
-          <th>A8 SETUP<br /><span>Out of 100</span></th>
-          <th>A9 SETUP<br /><span>Out of 100</span></th>
-        </tr>
-      </thead>
-      <!---------------row 1---------------------->
-      <tbody>
-        <tr>
-          <td>Tom</td>
-          <td style="text-align: center; vertical-align: middle">98</td>
-          <td style="text-align: center; vertical-align: middle">89</td>
-          <td style="text-align: center; vertical-align: middle">87</td>
-          <td style="text-align: center; vertical-align: middle">90</td>
-          <td style="text-align: center; vertical-align: middle">89</td>
-          <td style="text-align: center; vertical-align: middle">94</td>
-          <td style="text-align: center; vertical-align: middle">88</td>
-          <td style="text-align: center; vertical-align: middle">87</td>
-          <td style="text-align: center; vertical-align: middle">100</td>
-        </tr>
-        <!---------------row 2---------------------->
-        <tr>
-          <td>Petter</td>
-          <td style="text-align: center; vertical-align: middle">98</td>
-          <td style="text-align: center; vertical-align: middle">80</td>
-          <td style="text-align: center; vertical-align: middle">87</td>
-          <td style="text-align: center; vertical-align: middle">86</td>
-          <td style="text-align: center; vertical-align: middle">100</td>
-          <td style="text-align: center; vertical-align: middle">94</td>
-          <td style="text-align: center; vertical-align: middle">
-            <input
-              type="text"
-              value="85"
-              style="
-                border: 1px solid gray;
-                padding: 3px;
-                text-align: center;
-                width: 50px;
-              "
-              readonly
-            />
-          </td>
-          <td style="text-align: center; vertical-align: middle">84</td>
-          <td style="text-align: center; vertical-align: middle">92</td>
-        </tr>
-        <!---------------row 3---------------------->
-        <tr>
-          <td>Luke</td>
-          <!-- This cell has the rectangle -->
-          <td style="text-align: center; vertical-align: middle">
-            <input
-              type="text"
-              value="99"
-              style="
-                border: 1px solid gray;
-                padding: 3px;
-                text-align: center;
-                width: 50px;
-              "
-              readonly
-            />
-          </td>
-          <td style="text-align: center; vertical-align: middle">88</td>
-          <td style="text-align: center; vertical-align: middle">97</td>
-          <td style="text-align: center; vertical-align: middle">82</td>
-          <td style="text-align: center; vertical-align: middle">96</td>
-          <td style="text-align: center; vertical-align: middle">93</td>
-          <td style="text-align: center; vertical-align: middle">95</td>
-          <td style="text-align: center; vertical-align: middle">100</td>
-          <td style="text-align: center; vertical-align: middle">93</td>
-        </tr>
-        <!---------------row 4---------------------->
-        <tr>
-          <td>Han</td>
-          <td style="text-align: center; vertical-align: middle">83</td>
-          <td style="text-align: center; vertical-align: middle">99</td>
-          <td style="text-align: center; vertical-align: middle">94</td>
-          <td style="text-align: center; vertical-align: middle">98</td>
-          <td style="text-align: center; vertical-align: middle">86</td>
-          <td style="text-align: center; vertical-align: middle">85</td>
-          <td style="text-align: center; vertical-align: middle">
-            <input
-              type="text"
-              value="86"
-              style="
-                border: 1px solid gray;
-                padding: 3px;
-                text-align: center;
-                width: 50px;
-              "
-              readonly
-            />
-          </td>
-          <td style="text-align: center; vertical-align: middle">80</td>
-          <td style="text-align: center; vertical-align: middle">84</td>
-        </tr>
-        <!---------------row 5---------------------->
-        <tr>
-          <td>Lando</td>
-          <td style="text-align: center; vertical-align: middle">83</td>
-          <td style="text-align: center; vertical-align: middle">
-            <input
-              type="text"
-              value="92"
-              style="
-                border: 1px solid gray;
-                padding: 3px;
-                text-align: center;
-                width: 50px;
-              "
-              readonly
-            />
-          </td>
-          <td style="text-align: center; vertical-align: middle">80</td>
-          <td style="text-align: center; vertical-align: middle">80</td>
-          <td style="text-align: center; vertical-align: middle">92</td>
-          <td style="text-align: center; vertical-align: middle">92</td>
-          <td style="text-align: center; vertical-align: middle">94</td>
-          <td style="text-align: center; vertical-align: middle">87</td>
-          <td style="text-align: center; vertical-align: middle">95</td>
-        </tr>
-        <!---------------row 6---------------------->
-        <tr>
-          <td>Feifei</td>
-          <td style="text-align: center; vertical-align: middle">85</td>
-          <td style="text-align: center; vertical-align: middle">89</td>
-          <td style="text-align: center; vertical-align: middle">94</td>
-          <td style="text-align: center; vertical-align: middle">83</td>
-          <td style="text-align: center; vertical-align: middle">83</td>
-          <td style="text-align: center; vertical-align: middle">84</td>
-          <td style="text-align: center; vertical-align: middle">91</td>
-          <td style="text-align: center; vertical-align: middle">87</td>
-          <td style="text-align: center; vertical-align: middle">96</td>
-        </tr>
-        <!---------------row 7---------------------->
-        <tr>
-          <td>Dummy</td>
-          <td style="text-align: center; vertical-align: middle">81</td>
-          <td style="text-align: center; vertical-align: middle">81</td>
-          <td style="text-align: center; vertical-align: middle">
-            <input
-              type="text"
-              value="96"
-              style="
-                border: 1px solid gray;
-                padding: 3px;
-                text-align: center;
-                width: 50px;
-              "
-              readonly
-            />
-          </td>
-          <td style="text-align: center; vertical-align: middle">80</td>
-          <td style="text-align: center; vertical-align: middle">89</td>
-          <td style="text-align: center; vertical-align: middle">88</td>
-          <td style="text-align: center; vertical-align: middle">82</td>
-          <td style="text-align: center; vertical-align: middle">80</td>
-          <td style="text-align: center; vertical-align: middle">82</td>
-        </tr>
-        <!---------------row 8---------------------->
-        <tr>
-          <td>Ovilia</td>
-          <td style="text-align: center; vertical-align: middle">
-            <input
-              type="text"
-              value="85"
-              style="
-                border: 1px solid gray;
-                padding: 3px;
-                text-align: center;
-                width: 50px;
-              "
-              readonly
-            />
-          </td>
-          <td style="text-align: center; vertical-align: middle">99</td>
-          <td style="text-align: center; vertical-align: middle">87</td>
-          <td style="text-align: center; vertical-align: middle">82</td>
-          <td style="text-align: center; vertical-align: middle">88</td>
-          <td style="text-align: center; vertical-align: middle">83</td>
-          <td style="text-align: center; vertical-align: middle">88</td>
-          <td style="text-align: center; vertical-align: middle">92</td>
-          <td style="text-align: center; vertical-align: middle">80</td>
-        </tr>
-        <!---------------row 9---------------------->
-        <tr>
-          <td>Ren</td>
-          <td style="text-align: center; vertical-align: middle">81</td>
-          <td style="text-align: center; vertical-align: middle">
-            <input
-              type="text"
-              value="92"
-              style="
-                border: 1px solid gray;
-                padding: 3px;
-                text-align: center;
-                width: 50px;
-              "
-              readonly
-            />
-          </td>
-          <td style="text-align: center; vertical-align: middle">
-            <input
-              type="text"
-              value="82"
-              style="
-                border: 1px solid gray;
-                padding: 3px;
-                text-align: center;
-                width: 50px;
-              "
-              readonly
-            />
-          </td>
-          <td style="text-align: center; vertical-align: middle">86</td>
-          <td style="text-align: center; vertical-align: middle">83</td>
-          <td style="text-align: center; vertical-align: middle">
-            <input
-              type="text"
-              value="84"
-              style="
-                border: 1px solid gray;
-                padding: 3px;
-                text-align: center;
-                width: 50px;
-              "
-              readonly
-            />
-          </td>
-          <td style="text-align: center; vertical-align: middle">98</td>
-          <td style="text-align: center; vertical-align: middle">85</td>
-          <td style="text-align: center; vertical-align: middle">96</td>
-        </tr>
-        <!---------------row 10---------------------->
-        <tr>
-          <td>Cindy</td>
-          <td style="text-align: center; vertical-align: middle">94</td>
-          <td style="text-align: center; vertical-align: middle">98</td>
-          <td style="text-align: center; vertical-align: middle">83</td>
-          <td style="text-align: center; vertical-align: middle">83</td>
-          <td style="text-align: center; vertical-align: middle">100</td>
-          <td style="text-align: center; vertical-align: middle">96</td>
-          <td style="text-align: center; vertical-align: middle">96</td>
-          <td style="text-align: center; vertical-align: middle">85</td>
-          <td style="text-align: center; vertical-align: middle">87</td>
-        </tr>
-        <!---------------row 11---------------------->
-        <tr>
-          <td>Yoyo</td>
-          <td style="text-align: center; vertical-align: middle">80</td>
-          <td style="text-align: center; vertical-align: middle">89</td>
-          <td style="text-align: center; vertical-align: middle">99</td>
-          <td style="text-align: center; vertical-align: middle">89</td>
-          <td style="text-align: center; vertical-align: middle">96</td>
-          <td style="text-align: center; vertical-align: middle">85</td>
-          <td style="text-align: center; vertical-align: middle">96</td>
-          <td style="text-align: center; vertical-align: middle">92</td>
-          <td style="text-align: center; vertical-align: middle">85</td>
-        </tr>
-        <!---------------row 12---------------------->
-        <tr>
-          <td>Amenda</td>
-          <td style="text-align: center; vertical-align: middle">82</td>
-          <td style="text-align: center; vertical-align: middle">88</td>
-          <td style="text-align: center; vertical-align: middle">95</td>
-          <td style="text-align: center; vertical-align: middle">100</td>
-          <td style="text-align: center; vertical-align: middle">
-            <input
-              type="text"
-              value="93"
-              style="
-                border: 1px solid gray;
-                padding: 3px;
-                text-align: center;
-                width: 50px;
-              "
-              readonly
-            />
-          </td>
-          <td style="text-align: center; vertical-align: middle">98</td>
-          <td style="text-align: center; vertical-align: middle">85</td>
-          <td style="text-align: center; vertical-align: middle">87</td>
-          <td style="text-align: center; vertical-align: middle">99</td>
-        </tr>
-      </tbody>
-    </table>
+      <!-- 33333333 -->
+      <div class="button-container d-flex align-items-center p-2 mb-3">
+        <button
+          class="btn btn-primary"
+          style="background-color: lightgray; border-color: white; color: black"
+        >
+          <i class="fa fa-filter"></i> Apply Filter
+        </button>
+      </div>
+
+      <!-- 4444444444 -->
+      <!-- grade table -->
+      <div>
+        <table
+          class="table table-bordered"
+          style="text-align: center; vertical-align: middle"
+        >
+          <thead class="thead-light">
+            <tr>
+              <th style="background-color: lightgray">Student Name</th>
+              <th style="background-color: lightgray">
+                A1 SETUP<br /><span>Out of 100</span>
+              </th>
+              <th style="background-color: lightgray">
+                A2 SETUP<br /><span>Out of 100</span>
+              </th>
+              <th style="background-color: lightgray">
+                A3 SETUP<br /><span>Out of 100</span>
+              </th>
+              <th style="background-color: lightgray">
+                A4 SETUP<br /><span>Out of 100</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tom</td>
+              <td>
+                <input
+                  type="text"
+                  value="85"
+                  style="
+                    border: 1px solid red;
+                    padding: 5px;
+                    text-align: center;
+                    width: 50px;
+                  "
+                />
+              </td>
+              <td>89</td>
+              <td>87</td>
+              <td>90</td>
+            </tr>
+            <!-- Additional rows as needed -->
+            <tr>
+              <td style="background-color: lightgray">Amy</td>
+              <td style="background-color: lightgray">98</td>
+              <td style="background-color: lightgray">89</td>
+              <td style="background-color: lightgray">87</td>
+              <td style="background-color: lightgray">
+                <input
+                  type="text"
+                  value="85"
+                  style="
+                    border: 1px solid red;
+                    padding: 5px;
+                    text-align: center;
+                    width: 50px;
+                  "
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>98</td>
+              <td>89</td>
+              <td>
+                <input
+                  type="text"
+                  value="85"
+                  style="
+                    border: 1px solid red;
+                    padding: 5px;
+                    text-align: center;
+                    width: 50px;
+                  "
+                />
+              </td>
+              <td>87</td>
+            </tr>
+            <tr>
+              <td style="background-color: lightgray">Tina</td>
+              <td style="background-color: lightgray">98</td>
+              <td style="background-color: lightgray">89</td>
+              <td style="background-color: lightgray">87</td>
+              <td style="background-color: lightgray">87</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </body>
 </html>
