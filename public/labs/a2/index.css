@@ -247,3 +247,15 @@
 .wd-width-75px {
   width: 75px;
 }
+
+/* ----------- boon exercise------------ */
+
+.btn-primary.override-bs {
+  background-color: #a90dfd;
+  border-color: #fd0d51;
+  border-width: 10px;
+  border-radius: 20px;
+  border-style: dashed;
+  font-size: 2em; /* Corrected unit specification */
+  font-weight: bolder; /* Assuming you meant to use 'bolder' */
+}
