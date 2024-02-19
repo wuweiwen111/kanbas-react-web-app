@@ -1,0 +1,93 @@
+/* for 4th columns */
+/* course status */
+.course-status-item a {
+  display: inline-block; /* Allows setting padding and background */
+  background-color: lightgray; /* Grey background */
+  padding: 5px; /* Adjust padding as needed */
+  color: black; /* Text color, change if necessary */
+  text-decoration: none; /* Removes underline */
+  border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+.course-status-item a {
+  display: inline-block; /* or block if you prefer */
+  background-color: lightgray; /* Grey background */
+  padding: 5px; /* Adjust padding as needed */
+  color: black; /* Text color, change if necessary */
+  text-decoration: none; /* Removes underline */
+  border-radius: 5px; /* Optional: adds rounded corners */
+  margin-bottom: 10px; /* Adds space between each link/button */
+}
+
+/* hover buttons */
+.course-status-item a:hover {
+  background-color: darkgray; /* Darker shade for hover effect */
+  color: white; /* Change text color for better contrast */
+  cursor: pointer; /* Changes the cursor to indicate clickable item */
+}
+
+.btn-unpublished {
+  background-color: lightcoral;
+  color: black;
+  border-color: white;
+}
+.btn-unpublished:hover {
+  background-color: #f08080; /* Darker shade of coral for hover */
+}
+
+.btn-published {
+  background-color: green;
+  color: black;
+  border-color: white;
+}
+.btn-published:hover {
+  background-color: #90ee90; /* Darker shade of green for hover */
+}
+/* todo */
+.todo-container {
+  padding-bottom: 20px;
+}
+.todo {
+  color: red;
+  text-decoration: none;
+}
+
+.todo-top {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.todo-detail {
+  display: block;
+  color: gray;
+}
+
+/* course status */
+.btn-published {
+  background-color: green;
+  color: white;
+}
+
+.calendar-link {
+  text-decoration: none;
+  color: red;
+}
+.coming-up-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coming-up-group {
+  list-style-type: none;
+  padding-left: 0%;
+}
+
+.coming-up-group a {
+  text-decoration: none;
+  color: red;
+}
+
+.modules-list-container {
+  flex: 1; /* Adjust flex grow as needed, or set a fixed width */
+}

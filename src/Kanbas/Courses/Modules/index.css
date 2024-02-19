@@ -1,0 +1,76 @@
+/* button */
+
+.button-container {
+  display: flex; /* Use flexbox layout */
+  justify-content: flex-end; /* Align items to the end (right) */
+  gap: 10px; /* Optional: add some space between elements */
+}
+
+.button-group button,
+.button-group select {
+  background-color: #f0f0f0; /* Light grey background for both buttons and select */
+  color: #333; /* Dark text color */
+  border: 1px solid #ccc; /* Light grey border */
+  padding: 8px 16px; /* Padding for size */
+  margin-right: 8px; /* Margin for spacing */
+  cursor: pointer; /* Cursor to indicate clickable */
+}
+
+.button-group button:hover,
+.button-group select:hover {
+  background-color: #e0e0e0; /* Darker grey background on hover */
+}
+
+.button-group .btn-module {
+  background-color: #007bff; /* Example blue background for a specific button */
+  color: #fff; /* White text for contrast */
+  /* Add any other specific styles for .btn-module */
+}
+.button-group .btn-module {
+  background-color: red; /* Default background color */
+  color: white; /* Text color */
+  border: none;
+  cursor: pointer;
+}
+.btn-module:hover {
+  background-color: darkred; /* Darker shade of red on hover */
+}
+/* content */
+.wd-modules,
+.wd-modules * {
+  border-radius: 0%;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.wd-modules {
+  margin: 5px;
+}
+
+.wd-modules > li {
+  background-color: lightgray;
+  border: 1px solid gray !important;
+  border-left: none !important;
+}
+
+.wd-modules > li > div {
+  padding: 6px;
+  border-left: 1px solid gray !important;
+}
+
+.wd-modules > li > ul > li {
+  padding: 5px;
+  border-top: 1px solid gray !important;
+  border-left: 2px solid green;
+}
+
+.wd-modules > li {
+  margin-bottom: 20px;
+}
+
+/* new */
+.title {
+  text-decoration: none;
+  color: black;
+}
