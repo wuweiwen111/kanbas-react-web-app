@@ -9,7 +9,7 @@ function Home() {
     <div>
       <div className="d-flex justify-content-between">
         {/* module content */}
-        <div className="modules-list-container">
+        <div className="modules-list-container flex-fill">
           <ModulesList />
         </div>
 

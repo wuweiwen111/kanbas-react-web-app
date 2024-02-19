@@ -1,9 +1,8 @@
-// main
 //-----------------------------------------------------------------------------//
 import { courses } from "../../Kanbas/Database"; // courses database
 import { HiMiniBars3 } from "react-icons/hi2";
 import CourseNavigation from "./Navigation";
-import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import { Navigate, Route, Routes, useParams, useLocation } from "react-router-dom";
 
 // Courses/Modules
 import Modules from "./Modules";
@@ -18,7 +17,13 @@ import Grades from "./Grades";
 function Courses() {
   const { courseId } = useParams(); // extract courseID from URL path
   const course = courses.find((course) => course._id === courseId); // use courseId here
+  const location = useLocation(); // breadcrumb: Use useLocation hook to get the current location
 
+  // Extract the current page from the URL
+  const currentPage = location.pathname.split("/").pop() || ""; // This gets the last segment of the URL path
+
+  // Optionally, you might want to capitalize or format currentPage
+  const formattedPage = currentPage.charAt(0).toUpperCase() + currentPage.slice(1); // Capitalize the first letter
   return (
     <div>
       {/* 三 on top */}
@@ -30,7 +35,7 @@ function Courses() {
         }}
       >
         <HiMiniBars3 style={{ marginRight: "30px", marginLeft: "30px" }} />
-        {course?.number} {course?.name}
+        {course?.number} {course?.name} {">"} {formattedPage}
       </h3>
 
       {/* Home, Module ... */}
