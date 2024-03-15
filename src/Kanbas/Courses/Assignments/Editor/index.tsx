@@ -1,50 +1,184 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { assignments } from "../../../Database";
+// import { assignments } from "../../../Database";
+import * as db from "../../../Database";
 import { BsThreeDotsVertical } from "react-icons/bs"; // icon
 import { TbCircleCheckFilled } from "react-icons/tb"; // icon
+// import reducer
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  selectAssignment,
+} from "../assignmentsReducer";
+import { KanbasState } from "../../../store";
+import { useDispatch, useSelector } from "react-redux";
 
 function AssignmentEditor() {
-  const { assignmentId } = useParams(); // extract courseId from url path
-  const assignment = assignments.find((each) => each._id === assignmentId); // find assignment
-  const { courseId } = useParams(); // extract courseId from url path
+  const { assignmentId, courseId } = useParams();
+  // const assignment = db.assignments.find((each) => each._id === assignmentId); // find assignment
   const navigate = useNavigate();
-  const handleSaveOrCancel = () => navigate(`/Kanbas/Courses/${courseId}/Assignments`); // same path with for save and cancel
+  const dispatch = useDispatch();
 
+  const assignments = useSelector((state: KanbasState) =>
+    state.assignmentsReducer.assignments.filter(
+      (each) => each.course === courseId
+    )
+  );
+
+  const [assignmentDetails, setAssignmentDetails] = useState({
+    _id: null,
+    title: "",
+    description: "",
+    points: 100,
+    dueDate: "",
+    availableFromDate: "",
+    availableUntilDate: "",
+    course: courseId,
+  });
+
+  useEffect(() => {
+    // existing ass
+    if (assignmentId && assignmentId !== "new") {
+      const assignmentToEdit = assignments.find(
+        (assn) => assn._id === assignmentId
+      );
+      // Only set if assignmentToEdit is different from the current state to avoid infinite loops
+      if (assignmentToEdit && assignmentToEdit._id !== assignmentDetails._id) {
+        setAssignmentDetails(assignmentToEdit);
+      }
+    } else {
+      // new ass
+      if (assignmentDetails._id !== null) {
+        setAssignmentDetails({
+          _id: null,
+          title: "",
+          description: "",
+          points: 100,
+          dueDate: "",
+          availableFromDate: "",
+          availableUntilDate: "",
+          course: courseId,
+        });
+      }
+    }
+  }, [assignmentId, assignments, courseId, assignmentDetails._id]);
+
+  const handleSave = () => {
+    if (assignmentId === "new") {
+      dispatch(addAssignment(assignmentDetails));
+    } else {
+      dispatch(updateAssignment(assignmentDetails));
+    }
+    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+  };
+
+  const handleCancel = () =>
+    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
 
   return (
     <div>
-      <div className="mt-3" style={{ display: "flex", justifyContent: "flex-end", alignItems: "center"}}>
-      <TbCircleCheckFilled style={{ color: "green" }} />
+      <div
+        className="mt-3"
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
+        }}
+      >
+        <TbCircleCheckFilled style={{ color: "green" }} />
 
-        <span style={{ color: "green", marginLeft:"10px" }}>Published</span>
-        <button style={{marginLeft:"10px",     padding: "5px 5px", border:"none", cursor:"pointer", display:"flex"
-}}>
+        <span style={{ color: "green", marginLeft: "10px" }}>Published</span>
+        <button
+          style={{
+            marginLeft: "10px",
+            padding: "5px 5px",
+            border: "none",
+            cursor: "pointer",
+            display: "flex",
+          }}
+        >
           <BsThreeDotsVertical />
         </button>
       </div>
       <hr />
       <div>
         <h2 className=" mb-3">Assignment Name</h2>
-        <input value={assignment?.title} className="form-control mb-2" />
+        <input
+          placeholder="New Assignment"
+          className="form-control mb-2"
+          value={assignmentDetails.title}
+          onChange={(e) =>
+            setAssignmentDetails({
+              ...assignmentDetails,
+              title: e.target.value,
+            })
+          }
+        />
+        <textarea
+          className="form-control"
+          placeholder="New Description"
+          value={assignmentDetails.description}
+          onChange={(e) =>
+            setAssignmentDetails({
+              ...assignmentDetails,
+              description: e.target.value,
+            })
+          }
+        />
+        <h2>Point</h2>
+        <input
+          className="form-control"
+          placeholder="100"
+          type="number"
+          value={assignmentDetails.points}
+        />
+        {/* --------------- Assign ---------------*/}
+        <h2>Assign</h2>
+        <div className="card">
+          <div className="card-body">
+            <label className="form-label">Due</label>
+            <input
+              type="date"
+              className="form-control"
+              value={assignmentDetails.dueDate}
+            />
+          </div>
+          <div className="card-body">
+            <div className="row">
+              <div className="col-md-6">
+                <label>Available from</label>
+                <input
+                  type="date"
+                  className="form-control"
+                  value={assignmentDetails.availableFromDate}
+                />
+              </div>
+              <div className="col-md-6">
+                <label>Until</label>
+                <input
+                  type="date"
+                  className="form-control"
+                  value={assignmentDetails.availableUntilDate}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <hr />
-        {/* bottons on right */}
-        <button
-          onClick={handleSaveOrCancel}
-          className="btn btn-danger ms-2 float-end"
-          style={{}}
-        >
+        {/* -------------- Save button  --------------*/}
+        <button className="btn btn-danger ms-2 float-end" onClick={handleSave}>
           Save
         </button>
+        {/* -------------- Cancel button  --------------*/}
         <button
-          onClick={handleSaveOrCancel}
+          onClick={handleCancel}
           className="btn  ms-2 float-end"
           style={{ backgroundColor: "lightgray" }}
         >
           Cancel
         </button>
-
-        {/* <Link to={`/Kanbas/Courses/${courseId}/Assignments`} className="btn  float-end" style={{backgroundColor:"lightgray"}}>Cancel</Link> */}
       </div>
     </div>
   );

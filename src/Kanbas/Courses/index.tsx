@@ -1,8 +1,14 @@
 //-----------------------------------------------------------------------------//
-import { courses } from "../../Kanbas/Database"; // courses database
+// import { courses } from "../../Kanbas/Database"; // courses database
 import { HiMiniBars3 } from "react-icons/hi2";
 import CourseNavigation from "./Navigation";
-import { Navigate, Route, Routes, useParams, useLocation } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 
 // Courses/Modules
 import Modules from "./Modules";
@@ -13,8 +19,23 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 // grade
 import Grades from "./Grades";
+
+
+// ------ interface
+interface Course {
+  _id: string;
+  name: string;
+  number: string;
+  startDate: string;
+  endDate: string;
+  image?: string; // Assuming image is optional
+}
+
+interface CoursesProps {
+  courses: Course[];
+}
 //-----------------------------------------------------------------------------//
-function Courses() {
+function Courses({ courses }:CoursesProps) {
   const { courseId } = useParams(); // extract courseID from URL path
   const course = courses.find((course) => course._id === courseId); // use courseId here
   const location = useLocation(); // breadcrumb: Use useLocation hook to get the current location
@@ -23,7 +44,9 @@ function Courses() {
   const currentPage = location.pathname.split("/").pop() || ""; // This gets the last segment of the URL path
 
   // Optionally, you might want to capitalize or format currentPage
-  const formattedPage = currentPage.charAt(0).toUpperCase() + currentPage.slice(1); // Capitalize the first letter
+  const formattedPage =
+    currentPage.charAt(0).toUpperCase() + currentPage.slice(1); // Capitalize the first letter
+
   return (
     <div>
       {/* 三 on top */}
